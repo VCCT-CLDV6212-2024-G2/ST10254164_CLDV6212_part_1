@@ -1,0 +1,68 @@
+﻿@model ST10254164_CLDV6212_GR2_part1.Models.CustomerProfiles
+
+<style>
+    .customer-profile-container button.btn-primary {
+        background-color: gold;
+        border-color: gold;
+        color: black;
+        margin-bottom: 1%;
+    }
+
+        .customer-profile-container button.btn-primary:hover {
+            background-color: aqua;
+            border-color: aqua;
+            color: black;
+        }
+</style>
+
+
+<div class="customer-profile-container">
+    <div class="upload-image-form">
+        <form asp-action="UploadImage" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" name="file" class="form-control-file"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload Image</button>
+        </form>
+    </div>
+
+
+    <!--change to give two options: make a claim, or view claims-->
+    <!--this is the table-->
+    <div class="add-customer-profile-form">
+        <form asp-action="AddCustomerProfile" method="post">
+            <!--change the format to look cleaner-->
+            <div class="form-group">
+                <input type="text" name="FirstName" placeholder="First Name" required />
+            </div>
+            <div class="form-group">
+                <input type="text" name="LastName" placeholder="Last Name" required />
+            </div>
+            <div class="form-group">
+                <input type="email" name="Email" placeholder="Email" required />
+            </div>
+            <div class="form-group">
+                <input type="tel" name="PhoneNumber" placeholder="Phone Number" required />
+            </div>
+            <button type="submit">Submit Claim</button>
+        </form>
+    </div>
+
+    <div class="process-order-form">
+        <form asp-action="ProcessOrder" method="post">
+            <div class="form-group">
+                <input type="text" name="orderId" placeholder="Order ID" class="form-control" style="width: auto"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Process Order</button>
+        </form>
+    </div>
+
+    <div class="upload-contract-form">
+        <form asp-action="UploadContract" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" name="file" class="form-control-file" />
+            </div>
+            <button type="submit" class="btn btn-primary">Upload Contract</button>
+        </form>
+    </div>
+</div>
